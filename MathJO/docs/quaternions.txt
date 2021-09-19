@@ -1,0 +1,63 @@
+
+
+quaternions
+
+quadric error?//double and float versions
+
+quaternion for float and double precision
+
+variables:
+w,x,y,z
+
+functions:
+axisX
+axisY
+axisZ
+dot
+epsilon equal
+getaxis
+identity
+inverse
+inversemutiply
+length
+normalize
+nomalized
+setaxisangleD
+setaxisangleR
+set from rotationMatrix
+set fromto
+set to slerp
+squaredlength
+toRotationMatrix
+zero
+
+//unity
+eulerangles
+normalized
+this[int]
+w,x,y,z
+
+quaternion
+
+set
+setfromtorotation
+setlookrotation
+toangleaxis
+tostring
+
+angle
+angleaxis
+dot
+euler
+fromtorotation
+iverse
+lerp
+lerpunclamped
+lookrotation
+normalize
+rotatetowards
+slerp
+slerpunclamped
+
+operator* //combines lhs and rhs
+operator== // are two quaternions equal to each other
