@@ -1,6 +1,5 @@
 #include "Physics.h"
 #include <array>
-#include <vector>
 
 
  vec3 linearMotion(float deltaTime, vec3 pos, vec3 vel, vec3 accel)
@@ -10,7 +9,7 @@
 	 vel.x = vel.x + accel.x * deltaTime;
 	 vel.y = vel.y + accel.y * deltaTime;
 
-	 return pos;
+	//need to return both position and velocity here, or just call two seperate functions
 }
 
 vec3 angularMotion( float deltaTime, float angle,vec3 angvel, vec3 angaccel)

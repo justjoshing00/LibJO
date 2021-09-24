@@ -1,3 +1,13 @@
 #pragma once
+#include <chrono>
+#include <iostream>
+struct timer
+{
+	timer()
+	{
+		auto start_time = std::chrono::high_resolution_clock::now();
+		auto current_time = std::chrono::high_resolution_clock::now();
+	}
 
-// k so what we are doing here, is we are grabbing the date time from the computer so that we have an accurate clock to use in Update calls
+	 GetTimeFromStart(start_time, current_time);
+};
