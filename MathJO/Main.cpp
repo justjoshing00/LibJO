@@ -7,6 +7,9 @@ int main()
 {
 	Tests t;
 	t.buildvec2test();
+	t.buildvec3test();
+	t.buildvec4test();
+
 	
 
 	return 0;

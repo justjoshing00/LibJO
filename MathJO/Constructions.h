@@ -1,7 +1,7 @@
 #pragma once
 
 //TODO - Maybe have the indexers check if they use go OOB
-// based on - insert source/refence here
+//POTENTIAL SOLUTION: could restructure each type of vector to inherit from  somthing that have the neccesary operators in it 
 
 struct Vec2
 {
