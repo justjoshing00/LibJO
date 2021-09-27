@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 #include "Constructions.h"
 
 ///2-vector operations
@@ -14,7 +15,7 @@ Vec3 ScalarMutiply3v(const Vec3 p, const float s);
 float Magnitude(const Vec3 v);
 float Dot3v(const Vec3 p, const Vec3 q);
 Vec3 Cross3v(const Vec3 p, const Vec3 q);
-Vec3 Lerp3v(const Vec3 p, const Vec3 q);
+//Vec3 Lerp3v(const Vec3 p, const Vec3 q);
 Vec3 Normalize3v(const Vec3 v);
 
 // a cross b dot c
@@ -22,7 +23,7 @@ float ScalarTriple(const Vec3 p, const Vec3 q, const Vec3 r);
 //b * dot(a,b) / dot (b,b)
 Vec3 Projection(const Vec3 p, const Vec3 q);
 //a -b * dot(a,b)/dot(b,b)
-Vec3 Rejection(const Vec3 p), const Vec3 q;
+//Vec3 Rejection(const Vec3 p, const Vec3 q);
 
 //4-vector operations
 Vec4 Add4v(const Vec4 p, const Vec4 q);
@@ -32,16 +33,16 @@ Vec4 Normalize4v(const Vec4 v);
 float Dot4v(const Vec4 p, const Vec4 q);
 
 //operators multiply, divide,add,subtract, operate-assign,
-inline Vec3 operator /(const Vec3 v, float s)
+ Vec3 operator /(const Vec3 v, float s)
 {
 	s = 1.0f / s;
 	return Vec3(v.x * s, v.y * s, v.z * s);
 }
-inline Vec3 operator *(const Vec3 v, const float s)
+ Vec3 operator *(const Vec3 v, const float s)
 {
 	return Vec3(v.x * s, v.y * s, v.z * s);
 }
-inline Vec3 operator +(const Vec3 p, const Vec3 q)
+Vec3 operator +(const Vec3 p, const Vec3 q)
 {
 	return Vec3(p.x + q.x, p.y + q.y, p.z + q.z);
 }
@@ -54,11 +55,11 @@ inline Vec3 operator +(const Vec3 p, const Vec3 q)
 //	return output;
 //
 //}
-inline Vec3 operator -(const Vec3 p, const Vec3 q)
+ Vec3 operator -(const Vec3 p, const Vec3 q)
 {
 	return Vec3(p.x - q.x, p.y -q.y, p.z - q.z);
 }
-inline Vec3 operator -(const Vec3 v)
+ Vec3 operator -(const Vec3 v)
 {
 	return Vec3(-v.x, -v.y, -v.z);
 }
@@ -85,7 +86,7 @@ Mat3 rotatex(Mat3 m);
 Mat3 rotatey(Mat3 m);
 Mat3 rotatez(Mat3 m);
 
-inline Mat3 operator +(const Mat3 p, const Mat3 q)
+Mat3 operator +(const Mat3 p, const Mat3 q)
 {
 	    Mat3 result;
 	    result[0][0] = p[0][0] + q[0][0],
@@ -103,7 +104,7 @@ inline Mat3 operator +(const Mat3 p, const Mat3 q)
 
 		
 }
-inline Mat3 operator -(const Mat3 p, const Mat3 q)
+Mat3 operator -(const Mat3 p, const Mat3 q)
 {
 	    Mat3 result;
 	    result[0][0] = p[0][0] - q[0][0],
@@ -119,7 +120,7 @@ inline Mat3 operator -(const Mat3 p, const Mat3 q)
 		result[2][2] = p[2][2] - q[2][2];
 	    return result;
 }
-inline Mat3 operator *(const Mat3& p, const Mat3& q)
+Mat3 operator *(const Mat3& p, const Mat3& q)
 {
 	return Mat3(p(0,0) * q(0,0) + p(0,1) * q(1,0) + p(0,2) * (2,0),
 			    p(0,0) * q(0,1) + p(0,1) * q(1,1) + p(0,2) * (2,1),
@@ -131,7 +132,7 @@ inline Mat3 operator *(const Mat3& p, const Mat3& q)
 			    p(2,0) * q(0,1) + p(2,1) * q(1,1) + p(2,2) * (2,1),
 			    p(2,0) * q(0,2) + p(2,1) * q(1,2) + p(2,2) * (2,2));
 }
-inline Vec3 operator *(const Mat3& m, const Vec3& v)
+Vec3 operator *(const Mat3& m, const Vec3& v)
 {
 	return Vec3(m(0, 0) * v.x + m(0, 1) * v.y + m(0, 2) * v.z,
 				m(1, 0) * v.x + m(1, 1) * v.y + m(1, 2) * v.z,
@@ -144,7 +145,7 @@ Mat4 rotatex4M(Mat4 m);
 Mat4 rotatey4M(Mat4 m);
 Mat4 rotatez4M(Mat4 m);
 
-inline Mat4 operator +(const Mat4 p, const Mat4 q)
+Mat4 operator +(const Mat4 p, const Mat4 q)
 {
 	Mat4 result;
 	    result[0][0] = p[0][0] + q[0][0],
@@ -164,7 +165,7 @@ inline Mat4 operator +(const Mat4 p, const Mat4 q)
 		result[3][2] = p[3][2] + q[3][2];
 	return result;
 }
-inline Mat4 operator -(const Mat4 p, const Mat4 q)
+ Mat4 operator -(const Mat4 p, const Mat4 q)
 {
 	Mat4 result;
 	    result[0][0] = p[0][0] - q[0][0],
@@ -185,11 +186,11 @@ inline Mat4 operator -(const Mat4 p, const Mat4 q)
 	return result;
 }
 
-inline Mat4 operator *(const Mat4 p, const Mat4 q)
-{
-
-}
-inline Vec4 operator *(const Mat4 m, const Vec4 v)
+//Mat4 operator *(const Mat4 p, const Mat4 q)
+//{
+//
+//}
+Vec4 operator *(const Mat4 m, const Vec4 v)
 {
 	return Vec4(m(0, 0) * v.x + m(0, 1) * v.y + m(0, 2) * v.z + m(0, 3) * v.w,
 				m(1, 0) * v.x + m(1, 1) * v.y + m(1, 2) * v.z + m(1, 3) * v.w,

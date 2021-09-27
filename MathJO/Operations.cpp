@@ -1,5 +1,5 @@
 #include "operations.h"
-#include <math.h>
+
 
 //TODO
 //Write 2d rotation
@@ -124,7 +124,7 @@ Vec3 Projection(const Vec3 p, const Vec3 q)
 	return Vec3();
 }
 
-Vec3 Rejection(const Vec3 p)
+Vec3 Rejection(const Vec3 p, const Vec3 q)
 {
 	Vec3 result = p - q * (Dot3v(p, q) / Dot3v(q, q));
 	return Vec3();
@@ -185,6 +185,7 @@ float Dot4v(const Vec4 p, const Vec4 q)
 
 Mat3 Determinant(const Mat3 m)
 {
+	 
 	(m(0,0) * m(1,1) * m(2,2) - m(1,2) * m(2,1)) +
 	(m(0,1) * m(1,2) * m(2,0) - m(1,0) * m(2,2)) +
 	(m(0,2) * m(1,0) * m(2,1) - m(1,1) * m(2,0));

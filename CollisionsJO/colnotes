@@ -1,3 +1,7 @@
+// work heavily referenced from "http://www.jeffreythompson.org/collision-detection/table_of_contents.php"
+// print/return false if i call one of the functions im not using
+// make sure it prints the function name as well
+
 #include <iostream>
 #include <math.h>
 struct vec3

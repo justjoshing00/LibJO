@@ -1,6 +1,7 @@
 #pragma once
 
 //TODO - Maybe have the indexers check if they use go OOB
+// based on - insert source/refence here
 
 struct Vec2
 {
