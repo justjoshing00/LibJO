@@ -1,5 +1,5 @@
 #include "Physics.h"
-#include <array>
+
 
 
   void linearMotion(float deltaTime, vec3 pos, vec3 vel, vec3 accel, vec3 &resultpos, vec3 &resultvel)

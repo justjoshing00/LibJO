@@ -6,9 +6,6 @@
 // if ( 1.2 == v.x ) print "Test 1 ok"
 // else print "test 1 not ok"
 
-//figure out whats going on with the default constructor
-//overload the == to work here
-
 bool Tests::buildvec2test()
 {
 	bool sucess = true;
@@ -18,12 +15,12 @@ bool Tests::buildvec2test()
 
 	if (v2.x == testcase1.x && v2.y == testcase1.y)
 	{
-		std::cout << "vector 2 built correctly";
+		std::cout << "vector 2 built correctly" << std::endl;
 		return sucess;
 	}
 	else
 	{
-		std::cout << "vector 2 did not build correctly";
+		std::cout << "vector 2 did not build correctly" <<std::endl;
 		sucess = false;
 		return sucess;
 	}
@@ -38,12 +35,12 @@ bool Tests::buildvec3test()
 
 	if (v2.x == testcase1.x && v2.y == testcase1.y && v2.z == testcase1.z)
 	{
-		std::cout << "vector 3 built correctly";
+		std::cout << "vector 3 built correctly" << std::endl;
 		return sucess;
 	}
 	else
 	{
-		std::cout << "vector 3 did not build correctly";
+		std::cout << "vector 3 did not build correctly" << std::endl;
 		sucess = false;
 		return sucess;
 	}
@@ -58,12 +55,12 @@ bool Tests::buildvec4test()
 
 	if (v2.x == testcase1.x && v2.y == testcase1.y && v2.z == testcase1.z && v2.w == testcase1.w)
 	{
-		std::cout << "vector 4 built correctly";
+		std::cout << "vector 4 built correctly" << std::endl;
 		return sucess;
 	}
 	else
 	{
-		std::cout << "vector 4 did not build correctly";
+		std::cout << "vector 4 did not build correctly" << std::endl;
 		sucess = false;
 		return sucess;
 	}
@@ -88,24 +85,54 @@ bool Tests::add2test()
 {
 	Vec2 v1(2, 2);
 	Vec2 v2(3, 3);
-	Vec2 result;
-	result = Add2v(v1, v2);
+	Vec2 testcase1 (5,5);
+	Vec2 result = Add2v(v1, v2);
+	bool sucess = true;
+	if (result.x == testcase1.x && result.y == testcase1.y)
+	{
+		std::cout << "vector 2 built correctly" << std::endl;
+		return sucess;
+	}
+	else
+	{
+		std::cout << "vector 2 did not build correctly" << std::endl;
+		sucess = false;
+		return sucess;
+	}
     
 	return false;
 }
 
 bool Tests::subtract2test()
 {
+
 	Vec2 v1(2, 2);
 	Vec2 v2(3, 3);
-	Vec2 result;
-	result = Subtract2v(v1, v2);
+	Vec2 testcase1(-1, -1);
+	Vec2 result = Subtract2v(v1, v2);
+	bool sucess = true;
+	if (result.x == testcase1.x && result.y == testcase1.y)
+	{
+		std::cout << "vector 2 built correctly" << std::endl;
+		return sucess;
+	}
+	else
+	{
+		std::cout << "vector 2 did not build correctly" << std::endl;
+		sucess = false;
+		return sucess;
+	}
 
 	return false;
 }
 
 bool Tests::smultiply2test()
 {
+	//Vec2 v1(2, 2);
+	//float s1 = 2;
+	//Vec2 result;
+	//result = ScalarMutiply2v(v1, s1);
+
 	return false;
 }
 

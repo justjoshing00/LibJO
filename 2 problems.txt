@@ -1,4 +1,0 @@
-1: timer uses sdl, but also so does the main program, which may a link error
-
-2: my conception of what part of this needs the id was wrong. I was grouping function operands by id rather than grouping sets of data with ID
-

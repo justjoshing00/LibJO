@@ -64,9 +64,9 @@ Vec3 Subtract3v(const Vec3 p, const Vec3 q)
 Vec3 ScalarMutiply3v(const Vec3 p, const float s)
 {
 	Vec3 result;
-	result.x = p.x + s;
-	result.y = p.y + s;
-	result.z = p.z + s;
+	result.x = p.x * s;
+	result.y = p.y * s;
+	result.z = p.z * s;
 	return Vec3();
 }
 

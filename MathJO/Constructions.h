@@ -9,7 +9,11 @@ struct Vec2
 	float y;
 
 	Vec2() = default;
-	Vec2(float x,float y);
+	Vec2(float x_, float y_)
+	{
+		x = x_;
+		y = y_;
+	}
 	
 	inline float& operator[](int i);
 	inline const float& operator[](int i) const;
@@ -20,8 +24,15 @@ struct Vec3
 	float y;
 	float z;
 
+
 	Vec3() = default;
-	Vec3(float x,float y, float z);
+	Vec3(float x_, float y_, float z_)
+	{
+		x = x_;
+		y = y_;
+		z = z_;
+
+	}
 
 	inline float& operator[](int i);
 	inline const float& operator[](int i) const;
@@ -34,8 +45,14 @@ struct Vec4
 	float w;
 
 	Vec4() = default;
-	Vec4(float x, float y, float z, float w);
-	Vec4(Vec3 axis, float angle);
+	Vec4(float x_, float y_, float z_, float w_)
+	{
+		x = x_;
+		y = y_;
+		z = z_;
+		w = w_;
+	}
+	//Vec4(Vec3 axis, float angle);
 
 	inline float& operator[](int i);
 	inline const float& operator[](int i) const;

@@ -10,6 +10,10 @@ int main()
 	t.buildvec3test();
 	t.buildvec4test();
 
+	t.add2test();
+	t.subtract2test();
+	t.smultiply2test();
+
 	
 
 	return 0;

@@ -142,6 +142,9 @@
     <ClInclude Include="2DCollisions.h" />
     <ClInclude Include="3DCollisions.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
