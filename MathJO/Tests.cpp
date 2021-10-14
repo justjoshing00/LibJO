@@ -90,12 +90,12 @@ bool Tests::add2test()
 	bool sucess = true;
 	if (result.x == testcase1.x && result.y == testcase1.y)
 	{
-		std::cout << "vector 2 built correctly" << std::endl;
+		std::cout << "2vector addition works fine" << std::endl;
 		return sucess;
 	}
 	else
 	{
-		std::cout << "vector 2 did not build correctly" << std::endl;
+		std::cout << "2vector addition doesnt work, check add2v function" << std::endl;
 		sucess = false;
 		return sucess;
 	}
@@ -113,12 +113,12 @@ bool Tests::subtract2test()
 	bool sucess = true;
 	if (result.x == testcase1.x && result.y == testcase1.y)
 	{
-		std::cout << "vector 2 built correctly" << std::endl;
+		std::cout << "2vector subtraction works fine" << std::endl;
 		return sucess;
 	}
 	else
 	{
-		std::cout << "vector 2 did not build correctly" << std::endl;
+		std::cout << "2vector subtraction doesnt work, check subtract2v function" << std::endl;
 		sucess = false;
 		return sucess;
 	}
@@ -128,10 +128,22 @@ bool Tests::subtract2test()
 
 bool Tests::smultiply2test()
 {
-	//Vec2 v1(2, 2);
-	//float s1 = 2;
-	//Vec2 result;
-	//result = ScalarMutiply2v(v1, s1);
+	Vec2 v1(2, 4);
+	float s = 3;
+	Vec2 testcase1(6,12);
+	Vec2 result = ScalarMutiply2v(v1, s);
+	bool sucess = true;
+	if (result.x == testcase1.x && result.y == testcase1.y)
+	{
+		std::cout << "2vector scalar mutiply works fine" << std::endl;
+		return sucess;
+	}
+	else
+	{
+		std::cout << "2vector scalar mutiply doesnt work, check ScalarMultiply function" << std::endl;
+		sucess = false;
+		return sucess;
+	}
 
 	return false;
 }
