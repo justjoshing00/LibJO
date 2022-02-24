@@ -13,6 +13,10 @@ int main()
 	t.add2test();
 	t.subtract2test();
 	t.smultiply2test();
+	t.rotate2test();
+
+	t.add3test();
+	t.subtract3test();
 
 	
 

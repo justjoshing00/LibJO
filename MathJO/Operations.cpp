@@ -1,11 +1,8 @@
 #include "operations.h"
 
 
-//TODO
-//Write 2d rotation
-//Write Lerp 
-//Test normalize() to see if itll break on divide by zero 
-//write operators
+//TODO 1:Test normalize() to see if itll break on divide by zero
+//TODO 2: rotation and determinant for both 3m and 4m
 
 Vec2 Add2v(const Vec2 p, const Vec2 q)
 {
@@ -14,7 +11,6 @@ Vec2 Add2v(const Vec2 p, const Vec2 q)
 	result.y = p.y + q.y;
 
 	return result;
-	//id like to make sure this cause a leak. I just made a local varable, but im returning it from the function. Look up what return does exactly
 }
 
 Vec2 Subtract2v(const Vec2 p, const Vec2 q)
@@ -35,9 +31,15 @@ Vec2 ScalarMutiply2v(const Vec2 p, const float s)
 	return result;
 }
 
-Vec2 Rotate2v(const Vec2 v, const Vec2 angle)
+Vec2 Rotate2v(const Vec2 v, const float angle)
 {
-	return Vec2();
+	Vec2 result;
+	// resultantvector.x = cos angle x - sin angle y 
+	// resultantvector.y = sin angle x + cos angle y
+
+	result.x = (cosf(angle) * v.x) - (sinf(angle) * v.y);
+	result.y = (sinf(angle) * v.x) + (cosf(angle) * v.y);
+	return result;
 }
 
 Vec3 Add3v(const Vec3 p, const Vec3 q)
@@ -183,7 +185,7 @@ float Dot4v(const Vec4 p, const Vec4 q)
 	return result;
 }
 
-Mat3 Determinant(const Mat3 m)
+Mat3 Determinant(const Mat3& m)
 {
 	 
 	(m(0,0) * m(1,1) * m(2,2) - m(1,2) * m(2,1)) +
@@ -193,7 +195,7 @@ Mat3 Determinant(const Mat3 m)
 	return Mat3();
 }
 
-Mat3 Inverse(const Mat3 m)
+Mat3 Inverse(const Mat3& m)
 {
 	const Vec3 a = m[0];
 	const Vec3 b = m[1];
@@ -210,22 +212,22 @@ Mat3 Inverse(const Mat3 m)
 				r2.x * invDet, r2.y * invDet, r2.z * invDet);
 }
 
-Mat3 rotatex(Mat3)
+Mat3 RotateX(const Mat3&)
 {
 	return Mat3();
 }
 
-Mat3 rotatey(Mat3)
+Mat3 RotateY(const Mat3&)
 {
 	return Mat3();
 }
 
-Mat3 rotatez(Mat3)
+Mat3 RotateZ(const Mat3&)
 {
 	return Mat3();
 }
 
-Mat4 Determinant4M(Mat4 m)
+Mat4 Determinant4M(const Mat4& m)
 {
 	return Mat4();
 }
@@ -270,17 +272,17 @@ Mat4 Inverse4M(const Mat4& m)
 				  r3.x, r3.y, r3.z,  w4));
 }
 
-Mat4 rotatex4M(Mat4)
+Mat4 RotateX4M(const Mat4&)
 {
 	return Mat4();
 }
 
-Mat4 rotatey4M(Mat4)
+Mat4 RotateY4M(const Mat4&)
 {
 	return Mat4();
 }
 
-Mat4 rotatez4M(Mat4)
+Mat4 RotateZ4M(const Mat4&)
 {
 	return Mat4();
 }

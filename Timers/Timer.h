@@ -11,3 +11,7 @@ struct timer
 
 	 GetTimeFromStart(start_time, current_time);
 };
+
+class Timer
+{
+};

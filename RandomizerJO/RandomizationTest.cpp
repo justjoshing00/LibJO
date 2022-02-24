@@ -9,7 +9,7 @@ int main()
 	// i also probably need to think a little harder about the seed for the generator
 	for(int i = 0; i < 20; i++)
 	{
-		std::cout << rng.next() << std::endl;
+		std::cout << rng.next() <<"\n";
 	}
 	return 0;
 }

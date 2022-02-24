@@ -1,4 +1,5 @@
 #include "Tests.h"
+#include <math.h>
 
 // 1-2 tests each function
 // test if it builds and initializes okay
@@ -150,17 +151,70 @@ bool Tests::smultiply2test()
 
 bool Tests::rotate2test()
 {
-	return false;
+
+	Vec2 v1(2, 4);
+	float AOR = 90;
+	float NAOR = -90;
+	Vec2 testcase1(1,1); // test clockwise
+	Vec2 testcase2(1,1); //test counterclockwise
+
+	Vec2 result = Rotate2v(v1, AOR);
+	Vec2 result2 = Rotate2v(v1, NAOR);
+	
+	bool success1 = true;
+	bool success2 = true;
+	
+	
+	
+	
 }
 
 bool Tests::add3test()
 {
-	return false;
+	Vec3 v1(1, 1, 1);
+	Vec3 v2(2, 2, 2);
+
+	Vec3 testcase1(3, 3, 3);
+	Vec3 result = Add3v(v1,v2);
+
+	bool sucess = true;
+	if (result.x == testcase1.x && result.y == testcase1.y)
+	{
+		std::cout << "3vector addition works fine" << std::endl;
+		return sucess;
+	}
+	else
+	{
+		std::cout << "3vector addition doesnt work, check add3v function" << std::endl;
+		sucess = false;
+		return sucess;
+	}
+
+	
+
 }
 
 bool Tests::subtract3test()
 {
-	return false;
+	Vec3 v1(3, 3, 3);
+	Vec3 v2(2, 2, 2);
+
+	Vec3 testcase1(1, 1, 1);
+	Vec3 result = Subtract3v(v1, v2);
+
+	bool sucess = true;
+	if (result.x == testcase1.x && result.y == testcase1.y)
+	{
+		std::cout << "3vector addition works fine" << std::endl;
+		return sucess;
+	}
+	else
+	{
+		std::cout << "3vector addition doesnt work, check add3v function" << std::endl;
+		sucess = false;
+		return sucess;
+	}
+	
 }
 
 bool Tests::smultiply3test()

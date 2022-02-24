@@ -1,26 +1,30 @@
 #include "Physics.h"
+#include <tuple>
 
+//might want to return a sperate result variable here
 
-
-  void linearMotion(float deltaTime, vec3 pos, vec3 vel, vec3 accel, vec3 &resultpos, vec3 &resultvel)
+void linearMotion(float deltaTime,Body Body2d)
 {
-	
-	 resultpos.x = pos.x + vel.x * deltaTime + accel.x * deltaTime * deltaTime * 0.5f;
-	 resultpos.y = pos.y + vel.y * deltaTime + accel.y * deltaTime * deltaTime * 0.5f;
-	 resultvel.x = vel.x + accel.x * deltaTime;
-	 resultvel.y = vel.y + accel.y * deltaTime;
+	 Body2d.position.x = Body2d.position.x + Body2d.velocity.x * deltaTime + Body2d.acceleration.x * deltaTime * deltaTime * 0.5f;
+	 Body2d.position.y = Body2d.position.y + Body2d.velocity.y * deltaTime + Body2d.acceleration.y * deltaTime * deltaTime * 0.5f;
 
-	 //may need pointer to member variable, test it
-	//need to return both position and velocity here, or just call two seperate functions
-	  
+	 Body2d.velocity.x = Body2d.velocity.x + Body2d.acceleration.x * deltaTime;
+	 Body2d.velocity.y = Body2d.velocity.y + Body2d.acceleration.y * deltaTime;
 }
 
-vec3 angularMotion( float deltaTime, float angle,vec3 angvel, vec3 angaccel)
+void angularMotion( float deltaTime, Body Body2d)
 {
-	//fix this mess.
-	vec3 result;
-	//angle = angle + angvel * deltaTime + angaccel * deltaTime * deltaTime * 0.5f;
-	//angvel = angvel + angaccel * deltaTime;
-
-	return result;
+	Body2d.angle = Body2d.angle + Body2d.angularVelocity * deltaTime + Body2d.angularAcceleration * deltaTime * deltaTime * 0.5f;
+	Body2d.angularVelocity = Body2d.angularVelocity + Body2d.angularAcceleration * deltaTime;
 }
+
+vec3 applyforce(vec3 force)
+{
+	return force;
+}
+
+vec3 applytorque(vec3 torque)
+{
+	return torque;
+}
+

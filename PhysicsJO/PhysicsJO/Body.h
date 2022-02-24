@@ -7,9 +7,16 @@ struct vec3
 	float x, y, z;
 	vec3() = default;
 };
-struct body
+struct Body
 {
+	float mass;
+
 	vec3 position;
 	vec3 velocity;
 	vec3 acceleration;
+
+	float rotationalinertia;
+	float angle;
+	float angularVelocity;
+	float angularAcceleration;
 };

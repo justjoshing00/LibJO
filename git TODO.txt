@@ -1,9 +1,0 @@
-TODO -git
-
-!:include a gitignore for visual studio related stuff
-2:create a local repo
-push to local
-commit to local
-push to dev branch
-  
-

@@ -1,7 +1,7 @@
 #pragma once
 
-//TODO - Maybe have the indexers check if they use go OOB
-//POTENTIAL SOLUTION: could restructure each type of vector to inherit from  somthing that have the neccesary operators in it 
+//TODO 1: allow for contruction to be done with []
+//TODO 2: create mutiplication overloads for mat 3 and mat 4
 
 struct Vec2
 {
@@ -15,8 +15,14 @@ struct Vec2
 		y = y_;
 	}
 	
-	inline float& operator[](int i);
-	inline const float& operator[](int i) const;
+	inline float& operator[](int i)
+	{
+		;
+	}
+	inline const float& operator[](int i) const
+	{
+		;
+	}
 };
 struct Vec3
 {
@@ -34,8 +40,14 @@ struct Vec3
 
 	}
 
-	inline float& operator[](int i);
-	inline const float& operator[](int i) const;
+	inline float& operator[](int i)
+	{
+		;
+	}
+	inline const float& operator[](int i) const
+	{
+		;
+	}
 };
 struct Vec4
 {
@@ -54,8 +66,14 @@ struct Vec4
 	}
 	//Vec4(Vec3 axis, float angle);
 
-	inline float& operator[](int i);
-	inline const float& operator[](int i) const;
+	inline float& operator[](int i)
+	{
+
+	}
+	inline const float& operator[](int i) const
+	{
+		;
+	}
 
 };
 struct Mat2

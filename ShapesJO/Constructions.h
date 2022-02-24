@@ -42,7 +42,7 @@ private:
 	float sidex;
 	float sidey;
 public:
-	circle(float sidex_, float sidey_)
+	rectangle(float sidex_, float sidey_)
 	{
 		sidex = sidex_;
 		sidey = sidey_;
@@ -56,7 +56,7 @@ private:
 	float sideb;
 	float sidec;
 public:
-	circle(float sidea_, float sideb_)
+	triangle(float sidea_, float sideb_, float sidec_)
 	{
 		sidea = sidea_;
 		sideb = sideb_;

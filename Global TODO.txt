@@ -1,0 +1,25 @@
+global
+- create libraries i can import(modules?)
+shapes
+-move 2d shapes from collision to shapes
+math
+-add euler rotations
+-add determinants
+-add matrix multiplications
+-add quaternions 
+physics
+-add force and torque calculations to  physics
+
+timers
+-add a timer
+
+collisions
+- add line x and polygon x collision detection
+
+shaders
+-get started on this with some folders
+
+other stuff i want in here:
+utilities(useful conversions, useful definitions, etc)
+I think I want to put an ID generator in here
+  

@@ -4,6 +4,6 @@ int main()
 {
 	Test t;
 	t.LinearTest();
-	t.Angulartest();
+	t.AngularTest();
 	return 0;
 }
